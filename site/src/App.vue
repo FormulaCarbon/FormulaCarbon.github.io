@@ -1,47 +1,63 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import { cards } from '@/data/cards';
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+    <header>
+    
+    </header>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+    <main class="min-vh-100 w-100 d-flex flex-column">
+        <div class="bg-primary bg-gradient text-white min-vh-100">
+            <div class="m-3">
+                <div class="dashboard-grid">
+                    <div
+                    class="dashboard-item"
+                    v-for="(item, index) in cards"
+                    :key="index"
+                    :class="item.class"
+                    >
+                        <h3>{{ item.title }}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 150px;
+  gap: 20px;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+.dashboard-item {
+  background: #000;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 10px;
+  padding: 20px;
+  font-size: 1.2rem;
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+/* Custom sizes */
+.wide {
+  grid-column: span 2;
+}
+.tall {
+  grid-row: span 2;
+}
+.large {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+.largest {
+  grid-column: span 2;
+  grid-row: span 3;
 }
 </style>
