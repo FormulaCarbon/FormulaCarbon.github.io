@@ -1,7 +1,7 @@
 export const cards = [
-    { title: "Card 1", class: "largest" },
-    { title: "Card 2", class: "" },
-    { title: "Card 3", class: "tall" },
-    { title: "Card 4", class: "" },
-    { title: "Card 5", class: "wide" },
+    { class: "largest", component: "AboutMeCard" },
+    { class: "", component: "ProjectsCard" },
+    { class: "tall", component: "QualsCard" },
+    { class: "", component: "OrgsCard" },
+    { class: "wide", component: "ContactsCard" },
   ];
