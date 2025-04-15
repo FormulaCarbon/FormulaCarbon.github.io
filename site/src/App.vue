@@ -42,7 +42,7 @@ const componentsMap = {
 </template>
 
 <style scoped>
-/* pallete: https://colorhunt.co/palette/0926351b42425c83749ec8b9 */
+/* pallete: https://colorhunt.co/palette/040d12183d3d5c837493b1a6 */
 .dashboard-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
