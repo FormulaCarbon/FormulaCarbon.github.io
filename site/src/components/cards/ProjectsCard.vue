@@ -32,6 +32,11 @@
   overflow: hidden;
   outline: 5px solid #5C8374;
   scroll-snap-align: start;
+  transition: 0.3s;
+}
+
+.dashboard-item:hover {
+    outline-color: var(--color-accent);
 }
 
 .dashboard-item img {

@@ -5,40 +5,35 @@ import ProjectsCard from "@/components/cards/ProjectsCard.vue";
 import QualsCard from "@/components/cards/QualsCard.vue";
 import OrgsCard from "@/components/cards/OrgsCard.vue";
 import ContactsCard from "@/components/cards/ContactsCard.vue";
+import Background from "@/components/Background.vue";
 
 const componentsMap = {
     AboutMeCard,
     ProjectsCard,
     QualsCard,
     OrgsCard,
-    ContactsCard
+    ContactsCard,
 };
-
 </script>
-
-
-
 
 <template>
     <header></header>
-
-    <main class="min-vh-100 w-100 d-flex flex-column">
-        <div class="bg-main text-white min-vh-100" id = "container">
-            <v-vanta effect="waves" :options="options"></v-vanta>
-
-            <div id="shape-1" class="position-absolute"></div>
-            <div class="dashboard-grid m-3">
-                <div
-                    class="dashboard-item"
-                    v-for="(item, index) in cards"
-                    :key="index"
-                    :class="item.class"
-                >
-                    <component :is="componentsMap[item.component]" />
+    <Background>
+        <main class="min-vh-100 w-100 d-flex flex-column">
+            <div class="text-white min-vh-100" id="container">
+                <div class="dashboard-grid m-3">
+                    <div
+                        class="dashboard-item"
+                        v-for="(item, index) in cards"
+                        :key="index"
+                        :class="item.class"
+                    >
+                        <component :is="componentsMap[item.component]" />
+                    </div>
                 </div>
             </div>
-        </div>
-    </main>
+        </main>
+    </Background>
 </template>
 
 <style scoped>
@@ -53,7 +48,9 @@ const componentsMap = {
 }
 
 .dashboard-item {
-    background: var(--color-medium);
+    background: #183d3d54;
+    backdrop-filter: blur(18px);
+    filter: drop-shadow();
     color: white;
     display: flex;
     align-items: center;
@@ -62,11 +59,6 @@ const componentsMap = {
     border-radius: 10px;
     padding: 20px;
     font-size: 1.2rem;
-    outline: 5px solid var(--color-light);
-}
-
-.bg-main {
-    background: var(--color-dark);
 }
 
 /* Custom sizes */
@@ -83,16 +75,5 @@ const componentsMap = {
 .largest {
     grid-column: span 2;
     grid-row: span 3;
-}
-
-#shape-1 {
-    border-radius: 30% 70% 45% 55% / 64% 25% 75% 36%;
-    width: 300px;
-    height: 300px;
-    top: -100px;
-    right: 10px;
-    background: radial-gradient(#ae00ff, #5f0063);
-    z-index: 0; /* Lower the z-index */
-    border-image: linear-gradient(#c70a0a, #fefefe);
 }
 </style>
