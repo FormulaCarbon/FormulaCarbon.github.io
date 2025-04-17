@@ -1,8 +1,8 @@
 <script setup>
 const links = [
-    { icon: "bi bi-github", url: "https://github.com", text: "" },
-    { icon: "bi bi-reddit", url: "https://reddit.com", text: "s" },
-    { icon: "bi bi-linkedin", url: "https://linkedin.com", text: "" },
+    { icon: "bi bi-github", url: "https://github.com/FormulaCarbon"},
+    { icon: "bi bi-reddit", url: "https://reddit.com"},
+    { icon: "bi bi-linkedin", url: "https://linkedin.com"},
 ];
 </script>
 
